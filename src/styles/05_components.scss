@@ -1,0 +1,170 @@
+
+/* title block */
+
+.title-block {
+    position: relative;
+    padding: 22px 0 6px;
+    color: $col-brand-blue;
+    border-bottom: 2px solid $col-brand-blue;
+
+    .title {
+        font-size: 18px;
+        font-weight: 700;
+    }
+}
+
+/* date dropdown & menu */
+
+.date-dropdown {
+    position: relative;
+    padding: 3px 5px 3px 10px;
+    color: $col-brand-blue;
+    outline: none;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    text-decoration: none;
+    text-transform: capitalize;
+    cursor: pointer;
+
+    i {
+        color: $col-grey;
+    }
+
+    &:active,
+    &:focus,
+    &:hover {
+        background: rgba(158, 158, 158, 0.2);
+
+        & + ul.date-dropdown-menu {
+            display: block;
+        }
+    }
+}
+
+ul.date-dropdown-menu {
+    position: absolute;
+    right: 0;
+    left: auto;
+    z-index: 999;
+    display: none;
+    margin-top: 5px;
+    padding: 10px;
+    background: $col-white;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+
+    &:hover {
+        display: block;
+    }
+
+    li {
+        padding: 0 10px;
+        line-height: 48px;
+        cursor: pointer;
+
+        span {
+            display: inline-block;
+            width: 150px;
+        }
+
+        &.is-active {
+            color: $col-brand-skyblue;
+        }
+
+        &:active,
+        &:focus,
+        &:hover {
+            background: rgba(158, 158, 158, 0.2);
+        }
+    }
+}
+
+.customer-section,
+.customer-bets{
+    @include flexbox;
+}
+
+.customer,
+.customer-bet {
+    position: relative;
+    padding: 10px;
+    border: 1px solid #dadfe3;
+    font-size: 12px;
+}
+
+.customer {
+    width: 150px;
+
+    .customer-detail {
+        display: inline-block;
+        overflow: hidden;
+        width: 105px;
+        font-weight: 500;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .customer-status {
+
+        .stake-status{
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+
+        .won {
+            color: $col-green;
+        }
+
+        .lost {
+            color: $col-red;
+        }
+    }
+}
+
+.customer-bet {
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+        border: 1px solid $col-brand-skyblue;
+    }
+
+    &.started {
+        background: $col-grey-light;
+    }
+
+    .active-triangle {
+        position: absolute;
+        bottom: 0;
+        left: 18px;
+        width: 0;
+        height: 0;
+        margin-bottom: -6px;
+        border-top: 6px solid $col-white;
+        border-right: 8px solid transparent;
+        border-left: 8px solid transparent;
+    }
+}
+
+.race-details {
+
+    .race-details-header {
+        padding: 10px;
+        color: $col-grey-light;
+        background: $col-brand-blue;
+    }
+
+    .race-details-list {
+        border: 1px solid $col-grey-light;
+        font-size: 12px;
+
+        li {
+            padding: 10px;
+
+            &:nth-child(2n+1) {
+                background: $col-grey-light;
+            }
+        }
+    }
+}
